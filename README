@@ -9,16 +9,16 @@ For full details, see http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2
 The protocol has been modified and the PSI-BLAST profiles are now replaced with hhblits PSSMs. Performance is slighty improved:
 
 Cross-validated per-residue performance:
-MCC:		    0.4412
-Precision:	0.7125
-Recall:	    0.5292
-TPR:		    0.7523
-FPR:		    0.3121
-TP:		      3231
-FP:		      1304
-TN:		      2874
-FN:		      1064
-Targets:	  75/75
+MCC:        0.4412
+Precision:  0.7125
+Recall:     0.5292
+TPR:        0.7523
+FPR:        0.3121
+TP:         3231
+FP:         1304
+TN:         2874
+FN:         1064
+Targets:    75/75
 
 For details on generating the PSSM see equations 2 and 3 here:
 http://www.biomedcentral.com/1471-2105/12/154 
@@ -26,7 +26,13 @@ http://www.biomedcentral.com/1471-2105/12/154
 Compiling
 ---------
 
-Tested under Ubuntu 13.04. First set the paths to the hhsuite bin directory, and an hhblits database, in the Perl script. Then to compile, just run make (then optionally, make test). In the output file, scores > 0.5 indicate the residue is predicted to be lipid exposed.
+Tested under Ubuntu 13.04. First set the paths to the hhsuite bin directory, and an hhblits database, in the Perl script. Then to compile, just run make (then optionally, make test).
+
+Run as follows, passing in a FASTA file:
+
+./hhlipex.pl input/1gzmA.fa	
+
+In the output file, scores > 0.5 indicate the residue is predicted to be lipid exposed.
 
 Help
 ----
