@@ -1,17 +1,36 @@
-Uses libsvm 3.12
-Output is posterior probabiliy of each residue being exposed to membrane lipid
-Score > 0.5 == lipid exposed
-X-validated performance:
-MCC:		0.4412
+Lipid exposure prediction using support vector machines and hhblits profiles
+(c) Tim Nugent 2013
+
+Paper
+-----
+
+For full details, see http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000714
+
+The protocol has been modified and the PSI-BLAST profiles are now replaced with hhblits PSSMs. Performance is slighty improved:
+
+Cross-validated per-residue performance:
+MCC:		    0.4412
 Precision:	0.7125
-Recall:	0.5292
-TPR:		0.7523
-FPR:		0.3121
-TP:		3231
-FP:		1304
-TN:		2874
-FN:		1064
-Targets:	75/75
-Details in equations 2 and 3 here:
+Recall:	    0.5292
+TPR:		    0.7523
+FPR:		    0.3121
+TP:		      3231
+FP:		      1304
+TN:		      2874
+FN:		      1064
+Targets:	  75/75
+
+For details on generating the PSSM see equations 2 and 3 here:
 http://www.biomedcentral.com/1471-2105/12/154 
 
+Compiling
+---------
+
+Tested under Ubuntu 13.04. First set the paths to the hhsuite bin directory, and an hhblits database, in the Perl script. Then to compile, just run make (then optionally, make test). In the output file, scores > 0.5 indicate the residue is predicted to be lipid exposed.
+
+Help
+----
+
+Please report bugs and suggestions to:
+
+t.nugent@cs.ucl.ac.uk
