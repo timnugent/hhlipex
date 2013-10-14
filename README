@@ -32,7 +32,7 @@ Run as follows, passing in a FASTA file:
 
 ./hhlipex.pl input/1gzmA.fa	
 
-In the output file, scores > 0.5 indicate the residue is predicted to be lipid exposed.
+In the output file, scores > 0.5 indicate the residue (one per line) is predicted to be lipid exposed.
 
 Help
 ----
