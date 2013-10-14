@@ -26,7 +26,12 @@ http://www.biomedcentral.com/1471-2105/12/154
 Compiling
 ---------
 
-Tested under Ubuntu 13.04. First set the paths to the hhsuite bin directory, and an hhblits database, in the Perl script. Then to compile, just run make (then optionally, make test).
+Tested under Ubuntu 13.04. First set the paths to the hhsuite bin directory, and an hhblits database, in the Perl script:
+
+my $hhpath = "/home/tnugent/Applications/hhsuite-2.0.13-linux-x86_64/bin";
+my $dbname = "/home/tnugent/databases/uniprot20_02Sep11";
+
+Then to compile, just run make (then optionally, make test).
 
 Run as follows, passing in a FASTA file:
 
