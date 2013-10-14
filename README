@@ -1,0 +1,17 @@
+Uses libsvm 3.12
+Output is posterior probabiliy of each residue being exposed to membrane lipid
+Score > 0.5 == lipid exposed
+X-validated performance:
+MCC:		0.4412
+Precision:	0.7125
+Recall:	0.5292
+TPR:		0.7523
+FPR:		0.3121
+TP:		3231
+FP:		1304
+TN:		2874
+FN:		1064
+Targets:	75/75
+Details in equations 2 and 3 here:
+http://www.biomedcentral.com/1471-2105/12/154 
+
