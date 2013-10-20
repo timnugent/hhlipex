@@ -87,6 +87,7 @@ int main(int argc, const char* argv[]){
 	// Libsvm containers
 	int max_nr_attr = 60;
 	int nr_class=svm_get_nr_class(model);
+	// need to free these up
 	struct svm_node *feature_vector = (struct svm_node *) malloc(max_nr_attr*sizeof(struct svm_node));
 	double *prob_estimates = (double *) malloc(nr_class*sizeof(double));
 
