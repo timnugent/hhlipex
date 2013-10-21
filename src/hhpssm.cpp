@@ -70,26 +70,27 @@ int main(int argc, const char* argv[]){
 		fclose (fin);
 	}else{
 		cout << "Couldn't open file " << hhmake_file << endl;
-		exit(1);
+		return(1);
 	}
 	if(!found_null_freqs || !pos){
 		cout << "Failed to parse hhmake output" << endl;
-		exit(1);
+		fclose(fin);
+		return(1);
 	}
+	fclose(fin);
 
 	// Load libsvm model file
-    	struct svm_model* model;
-    	if((model = svm_load_model(model_file.c_str())) == 0){
+    svm_model* model;
+    if((model = svm_load_model(model_file.c_str())) == 0){
 		cout << "Couldn't load model file " << model_file << endl << "Try passing it via -m flag" << endl;
-        	exit(1);
+        return(1);
 	}
 
 	// Libsvm containers
 	int max_nr_attr = 60;
-	int nr_class=svm_get_nr_class(model);
-	// need to free these up
-	struct svm_node *feature_vector = (struct svm_node *) malloc(max_nr_attr*sizeof(struct svm_node));
-	double *prob_estimates = (double *) malloc(nr_class*sizeof(double));
+	int nr_class = svm_get_nr_class(model);
+	svm_node* feature_vector = new svm_node[max_nr_attr];
+	double* prob_estimates = new double[nr_class];
 
 	// Generate sliding window
 	for(int i = 0;i < pos;i++){		
@@ -114,5 +115,8 @@ int main(int argc, const char* argv[]){
 		cout << setprecision(precision) << prob_estimates[0] << endl;
 	}
 	svm_free_and_destroy_model(&model);
-	return(1);
+	delete [] feature_vector;
+	delete [] prob_estimates;
+
+	return(0);
 }

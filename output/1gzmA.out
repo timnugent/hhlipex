@@ -8712,7 +8712,7 @@ NAME  1gzmA
 FAM   
 FILE  1gzmA
 COM   /home/tnugent/Applications/hhsuite-2.0.13-linux-x86_64/bin/hhmake -pcm 2 -v 4 -i output/1gzmA.aln -o output/1gzmA.hhm 
-DATE  Mon Oct 14 12:30:48 2013
+DATE  Mon Oct 21 15:16:40 2013
 LENG  329 match states, 329 columns in multiple alignment
 FILT  168 out of 1385 sequences passed filter (-id 90 -cov 0 -qid 0 -qsc -20.00 -diff 100)
 NEFF  10.6
