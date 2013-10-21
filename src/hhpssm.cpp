@@ -74,10 +74,8 @@ int main(int argc, const char* argv[]){
 	}
 	if(!found_null_freqs || !pos){
 		cout << "Failed to parse hhmake output" << endl;
-		fclose(fin);
 		return(1);
 	}
-	fclose(fin);
 
 	// Load libsvm model file
     svm_model* model;
