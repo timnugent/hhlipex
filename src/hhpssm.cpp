@@ -56,7 +56,6 @@ int main(int argc, const char* argv[]){
 			}
 			if (sscanf(buf, "NULL%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f",&nullfreqs[0],&nullfreqs[1],&nullfreqs[2],&nullfreqs[3],&nullfreqs[4],&nullfreqs[5],&nullfreqs[6],&nullfreqs[7],&nullfreqs[8],&nullfreqs[9],&nullfreqs[10],&nullfreqs[11],&nullfreqs[12],&nullfreqs[13],&nullfreqs[14],&nullfreqs[15],&nullfreqs[16],&nullfreqs[17],&nullfreqs[18],&nullfreqs[19]) == 20){
 				for(int i = 0;i < 20;i++){
-					// Inverse log, *100
 					nullfreqs[i] = 100*pow(2,(float)nullfreqs[i]/-1000);
 					found_null_freqs = 1;
 					//cout << nullfreqs[i] << endl;
@@ -78,10 +77,10 @@ int main(int argc, const char* argv[]){
 	}
 
 	// Load libsvm model file
-    svm_model* model;
-    if((model = svm_load_model(model_file.c_str())) == 0){
+	svm_model* model;
+	if((model = svm_load_model(model_file.c_str())) == 0){
 		cout << "Couldn't load model file " << model_file << endl << "Try passing it via -m flag" << endl;
-        return(1);
+		return(1);
 	}
 
 	// Libsvm containers
